@@ -238,6 +238,7 @@ task.spawn(function()
 end)
 
 local scripts = {
+    {"[UPD2] 🎲 Stocks RNG", "https://pastefy.app/SR4cqWC9/raw"},
     {"Free UGC Obby Run (AFK or PLAY)!", "https://pastefy.app/RJli5IbS/raw"},
     {"[🛸] Cute Pets & Animals UGC", "https://pastefy.app/PRTbIi24/raw"},
     {"Draw Weapons", "https://pastefy.app/9REWEEWy/raw"},
