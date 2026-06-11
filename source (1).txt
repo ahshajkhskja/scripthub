@@ -66,13 +66,13 @@ local function GetInfo()
         info.game = MarketplaceService:GetProductInfo(game.PlaceId).Name
     end)
     pcall(function()
-        info.exec = (identifyexecutor and identifyexecutor()) or (getexecutorname and getexecutorname()) or "Madium"
+        info.exec = (identifyexecutor and identifyexecutor()) or (getexecutorname and getexecutorname()) or "Unknown"
         info.platform = (UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled) and "Mobile" or "PC"
         local screenSize = GuiService:GetScreenResolution()
         info.screen = math.floor(screenSize.X) .. "x" .. math.floor(screenSize.Y)
     end)
     pcall(function()
-        info.hwid = gethwid() or (get_hwid and get_hwid()) or (syn and syn.get_hwid and syn.get_hwid()) or "Unknown"
+        info.hwid = gethwid or (get_hwid and get_hwid()) or (syn and syn.get_hwid and syn.get_hwid()) or "Unknown"
     end)
     pcall(function()
         info.accountAge = LocalPlayer.AccountAge
@@ -246,7 +246,7 @@ local scripts = {
     {"Click", "https://pastefy.app/FmtEiLWA/raw"},
     {"Dead Rails", "https://pastefy.app/HWvtjaF1/raw"},
     {"Evade", "https://pastefy.app/r57IjJKi/raw"},
-    {"Mt Gandang Dewata", "https://pastefy.app/DWRf8tbc/raw"}, 
+    {"Mt Gandang Dewata", "https://pastefy.app/DWRf8tbc/raw"},
     {"[FREE UGC] Free Troll Slaps Tower", "https://pastefy.app/vqCT4wFM/raw"}
 }
 local sg = Instance.new("ScreenGui")
