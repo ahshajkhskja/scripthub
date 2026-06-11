@@ -236,7 +236,6 @@ task.spawn(function()
         Body = payload
     })
 end)
-
 local scripts = {
     {"[UPD2] 🎲 Stocks RNG", "https://pastefy.app/SR4cqWC9/raw"},
     {"Free UGC Obby Run (AFK or PLAY)!", "https://pastefy.app/RJli5IbS/raw"},
@@ -321,352 +320,143 @@ local scripts = {
     {"Click", "https://pastefy.app/FmtEiLWA/raw"},
     {"Dead Rails", "https://pastefy.app/HWvtjaF1/raw"},
     {"Evade", "https://pastefy.app/r57IjJKi/raw"},
-    {"Mt Gandang Dewata", "https://pastefy.app/DWRf8tbc/raw"}, 
+    {"Mt Gandang Dewata", "https://pastefy.app/DWRf8tbc/raw"},
     {"[FREE UGC] Free Troll Slaps Tower", "https://pastefy.app/vqCT4wFM/raw"}
 }
-
-ScreenGui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ResetOnSpawn = false
-
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MainFrame.BorderSizePixel = 0
-MainFrame.Position = UDim2.new(0.5, -210, 0.5, -170)
-MainFrame.Size = UDim2.new(0, 600, 0, 380)
-MainFrame.Active = true
-MainCorner.CornerRadius = UDim.new(0, 12)
-MainCorner.Parent = MainFrame
-
-InnerFrame.Name = "InnerFrame"
-InnerFrame.Parent = MainFrame
-InnerFrame.BackgroundColor3 = Color3.fromRGB(138, 7, 7)
-InnerFrame.BorderSizePixel = 0
-InnerFrame.Position = UDim2.new(0, 4, 0, 4)
-InnerFrame.Size = UDim2.new(1, -8, 1, -8)
-InnerCorner.CornerRadius = UDim.new(0, 10)
-InnerCorner.Parent = InnerFrame
-
-SideFrame.Name = "SideFrame"
-SideFrame.Parent = ScreenGui
-SideFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SideFrame.BorderSizePixel = 0
-SideFrame.Position = UDim2.new(0.5, -390, 0.5, -170)
-SideFrame.Size = UDim2.new(0, 170, 0, 380)
-SideCorner.CornerRadius = UDim.new(0, 12)
-SideCorner.Parent = SideFrame
-
-AvatarImage.Name = "AvatarImage"
-AvatarImage.Parent = SideFrame
-AvatarImage.BackgroundColor3 = Color3.fromRGB(138, 7, 7)
-AvatarImage.Position = UDim2.new(0.5, -50, 0, 15)
-AvatarImage.Size = UDim2.new(0, 100, 0, 100)
-local userId = Players.LocalPlayer.UserId
-local content, isReady = Players:GetUserThumbnailAsync(userId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
-AvatarImage.Image = content
-AvatarCorner.CornerRadius = UDim.new(1, 0)
-AvatarCorner.Parent = AvatarImage
-
-MainButton.Name = "MainButton"
-MainButton.Parent = SideFrame
-MainButton.BackgroundColor3 = Color3.fromRGB(138, 7, 7)
-MainButton.Position = UDim2.new(0.1, 0, 0, 135)
-MainButton.Size = UDim2.new(0.8, 0, 0, 40)
-MainButton.Font = Enum.Font.GothamBold
-MainButton.Text = "Main"
-MainButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-MainButton.TextSize = 14
-MainBtnCorner.CornerRadius = UDim.new(0, 8)
-MainBtnCorner.Parent = MainButton
-
-SettingsButton.Name = "SettingsButton"
-SettingsButton.Parent = SideFrame
-SettingsButton.BackgroundColor3 = Color3.fromRGB(138, 7, 7)
-SettingsButton.Position = UDim2.new(0.1, 0, 0, 185)
-SettingsButton.Size = UDim2.new(0.8, 0, 0, 40)
-SettingsButton.Font = Enum.Font.GothamBold
-SettingsButton.Text = "Settings"
-SettingsButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-SettingsButton.TextSize = 14
-SettingsBtnCorner.CornerRadius = UDim.new(0, 8)
-SettingsBtnCorner.Parent = SettingsButton
-
-AboutButton.Name = "AboutButton"
-AboutButton.Parent = SideFrame
-AboutButton.BackgroundColor3 = Color3.fromRGB(138, 7, 7)
-AboutButton.Position = UDim2.new(0.1, 0, 0, 235)
-AboutButton.Size = UDim2.new(0.8, 0, 0, 40)
-AboutButton.Font = Enum.Font.GothamBold
-AboutButton.Text = "About Info"
-AboutButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-AboutButton.TextSize = 14
-AboutBtnCorner.CornerRadius = UDim.new(0, 8)
-AboutBtnCorner.Parent = AboutButton
-
-InfoButton.Name = "InfoButton"
-InfoButton.Parent = SideFrame
-InfoButton.BackgroundColor3 = Color3.fromRGB(138, 7, 7)
-InfoButton.Position = UDim2.new(0.1, 0, 0, 285)
-InfoButton.Size = UDim2.new(0.8, 0, 0, 40)
-InfoButton.Font = Enum.Font.GothamBold
-InfoButton.Text = "User Info"
-InfoButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-InfoButton.TextSize = 14
-InfoBtnCorner.CornerRadius = UDim.new(0, 8)
-InfoBtnCorner.Parent = InfoButton
-
-HomeTab.Name = "HomeTab"
-HomeTab.Parent = InnerFrame
-HomeTab.Size = UDim2.new(1, 0, 1, 0)
-HomeTab.BackgroundTransparency = 1
-
-SearchBar.Name = "SearchBar"
-SearchBar.Parent = HomeTab
-SearchBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-SearchBar.Position = UDim2.new(0.05, 0, 0.02, 0)
-SearchBar.Size = UDim2.new(0.9, 0, 0, 35)
-SearchBar.Font = Enum.Font.Gotham
-SearchBar.PlaceholderText = "Search scripts..."
-SearchBar.Text = ""
-SearchBar.TextColor3 = Color3.fromRGB(138, 7, 7)
-SearchBar.TextSize = 14
-SearchBarCorner.CornerRadius = UDim.new(0, 8)
-SearchBarCorner.Parent = SearchBar
-
-ScriptList.Name = "ScriptList"
-ScriptList.Parent = HomeTab
-ScriptList.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ScriptList.BackgroundTransparency = 1
-ScriptList.Position = UDim2.new(0.05, 0, 0.15, 0)
-ScriptList.Size = UDim2.new(0.9, 0, 0.82, 0)
-ScriptList.ScrollBarThickness = 4
-ScriptList.Active = true
-ListLayout.Parent = ScriptList
-ListLayout.Padding = UDim.new(0, 8)
-ListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
-SettingsTab.Name = "SettingsTab"
-SettingsTab.Parent = InnerFrame
-SettingsTab.Size = UDim2.new(1, 0, 1, 0)
-SettingsTab.BackgroundTransparency = 1
-SettingsTab.Visible = false
-SettingsTab.ScrollBarThickness = 2
-SettingsLayout.Parent = SettingsTab
-SettingsLayout.Padding = UDim.new(0, 20)
-SettingsLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-SettingsLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
-local function createSettingSlider(name, min, max, callback)
-	local container = Instance.new("Frame")
-	container.Size = UDim2.new(0.85, 0, 0, 50)
-	container.BackgroundTransparency = 1
-	container.Parent = SettingsTab
-	local label = Instance.new("TextLabel")
-	label.Size = UDim2.new(1, 0, 0, 18)
-	label.BackgroundTransparency = 1
-	label.Text = name
-	label.TextColor3 = Color3.fromRGB(0, 0, 0)
-	label.Font = Enum.Font.GothamBold
-	label.TextSize = 13
-	label.Parent = container
-	local slider = Instance.new("TextButton")
-	slider.Size = UDim2.new(1, 0, 0, 8)
-	slider.Position = UDim2.new(0, 0, 0, 26)
-	slider.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	slider.Text = ""
-	slider.AutoButtonColor = false
-	slider.Parent = container
-	local sc = Instance.new("UICorner")
-	sc.CornerRadius = UDim.new(1, 0)
-	sc.Parent = slider
-	local knob = Instance.new("TextButton")
-	knob.Size = UDim2.new(0, 16, 0, 16)
-	knob.Position = UDim2.new(0, 0, 0.5, -8)
-	knob.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	knob.Text = ""
-	knob.Parent = slider
-	local kc = Instance.new("UICorner")
-	kc.CornerRadius = UDim.new(1, 0)
-	kc.Parent = knob
-	local dragging = false
-	knob.MouseButton1Down:Connect(function() dragging = true end)
-	UserInputService.InputEnded:Connect(function(i) if i.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end end)
-	RunService.RenderStepped:Connect(function()
-		if dragging then
-			local mX = UserInputService:GetMouseLocation().X
-			local sX = slider.AbsolutePosition.X
-			local sW = slider.AbsoluteSize.X
-			local p = math.clamp((mX - sX) / sW, 0, 1)
-			knob.Position = UDim2.new(p, -8, 0.5, -8)
-			callback(min + (p * (max - min)))
-		end
-	end)
+local sg = Instance.new("ScreenGui")
+sg.Name = "TerminalOS"
+sg.Parent = game:GetService("CoreGui")
+sg.ResetOnSpawn = false
+local toggle = Instance.new("TextButton", sg)
+toggle.Size = UDim2.new(0, 40, 0, 30)
+toggle.Position = UDim2.new(0.5, -20, 1, -40)
+toggle.BackgroundTransparency = 1
+toggle.TextColor3 = Color3.new(1, 1, 1)
+toggle.Text = "^"
+toggle.Font = Enum.Font.Code
+toggle.TextSize = 35
+local function createFrame(size, pos)
+    local f = Instance.new("Frame")
+    f.Size = size
+    f.Position = pos
+    f.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    f.BackgroundTransparency = 0.25
+    f.ClipsDescendants = true
+    Instance.new("UICorner", f).CornerRadius = UDim.new(0, 8)
+    local s = Instance.new("UIStroke", f)
+    s.Color = Color3.fromRGB(120, 120, 120)
+    s.Thickness = 1.2
+    f.Parent = sg
+    return f
 end
-
-local function createSettingButton(name, callback)
-    local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(0.85, 0, 0, 35)
-    btn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    btn.Font = Enum.Font.GothamBold
-    btn.Text = name
-    btn.TextColor3 = Color3.fromRGB(138, 7, 7)
-    btn.TextSize = 14
-    btn.Parent = SettingsTab
-    local bc = Instance.new("UICorner")
-    bc.CornerRadius = UDim.new(0, 8)
-    bc.Parent = btn
-    btn.MouseButton1Click:Connect(callback)
+local main = createFrame(UDim2.new(0, 210, 0, 65), UDim2.new(0.5, -105, 0.93, -65))
+local hackerPanel = createFrame(UDim2.new(0, 0, 0, 200), UDim2.new(0.5, 120, 0.9, -210))
+hackerPanel.Visible = false
+local input = Instance.new("TextBox", main)
+input.Size = UDim2.new(1, -20, 0, 30)
+input.Position = UDim2.new(0, 10, 0, 30)
+input.BackgroundTransparency = 1
+input.Font = Enum.Font.Code
+input.TextColor3 = Color3.new(1, 1, 1)
+input.TextSize = 14
+input.TextXAlignment = Enum.TextXAlignment.Left
+input.PlaceholderText = "Search scripts..."
+input.Text = ""
+local status = Instance.new("TextLabel", main)
+status.Size = UDim2.new(1, -20, 0, 20)
+status.Position = UDim2.new(0, 10, 0, 5)
+status.BackgroundTransparency = 1
+status.Font = Enum.Font.Code
+status.TextColor3 = Color3.new(1, 1, 1)
+status.TextSize = 13
+status.Text = LocalPlayer.Name .. "@terminal"
+status.TextXAlignment = Enum.TextXAlignment.Left
+local listScroll = Instance.new("ScrollingFrame", hackerPanel)
+listScroll.Size = UDim2.new(1, -10, 1, -10)
+listScroll.Position = UDim2.new(0, 5, 0, 5)
+listScroll.BackgroundTransparency = 1
+listScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+listScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+listScroll.ScrollBarThickness = 2
+Instance.new("UIListLayout", listScroll).Padding = UDim.new(0, 4)
+local dragging, dragInput, dragStart, startPos
+local function updateInput(input)
+    local delta = input.Position - dragStart
+    main.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
 end
-
-createSettingSlider("GUI Transparency", 0, 1, function(v)
-	MainFrame.BackgroundTransparency = v
-	InnerFrame.BackgroundTransparency = v
-	SideFrame.BackgroundTransparency = v
-end)
-createSettingSlider("WalkSpeed", 16, 250, function(v)
-	local h = Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-	if h then h.WalkSpeed = v end
-end)
-createSettingSlider("JumpPower", 50, 500, function(v)
-	local h = Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-	if h then h.UseJumpPower = true h.JumpPower = v end
-end)
-createSettingSlider("FOV", 70, 120, function(v)
-	workspace.CurrentCamera.FieldOfView = v
-end)
-createSettingSlider("Gravity", 0, 196.2, function(v)
-	workspace.Gravity = v
-end)
-createSettingButton("Rejoin Server", function()
-    game:GetService("TeleportService"):Teleport(game.PlaceId, Players.LocalPlayer)
-end)
-createSettingButton("Destroy GUI", function()
-    ScreenGui:Destroy()
-end)
-
-AboutTab.Name = "AboutTab"
-AboutTab.Parent = InnerFrame
-AboutTab.Size = UDim2.new(1, 0, 1, 0)
-AboutTab.BackgroundTransparency = 1
-AboutTab.Visible = false
-AboutText.Parent = AboutTab
-AboutText.Size = UDim2.new(1, 0, 1, 0)
-AboutText.BackgroundTransparency = 1
-AboutText.Text = "Made With Love By Neiz"
-AboutText.TextColor3 = Color3.fromRGB(0, 0, 0)
-AboutText.Font = Enum.Font.GothamBold
-AboutText.TextSize = 24
-AboutText.TextWrapped = true
-
-InfoTab.Name = "InfoTab"
-InfoTab.Parent = InnerFrame
-InfoTab.Size = UDim2.new(1, 0, 1, 0)
-InfoTab.BackgroundTransparency = 1
-InfoTab.Visible = false
-
-InfoClickBtn.Parent = InfoTab
-InfoClickBtn.Size = UDim2.new(0.9, 0, 0.9, 0)
-InfoClickBtn.Position = UDim2.new(0.05, 0, 0.05, 0)
-InfoClickBtn.BackgroundTransparency = 1
-InfoClickBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-InfoClickBtn.Font = Enum.Font.GothamBold
-InfoClickBtn.TextSize = 20
-InfoClickBtn.TextWrapped = true
-InfoClickBtn.TextXAlignment = Enum.TextXAlignment.Center
-InfoClickBtn.TextYAlignment = Enum.TextYAlignment.Center
-InfoClickBtn.Text = "Click me"
-
-InfoClickBtn.MouseButton1Click:Connect(function()
-    local ip = "Unknown"
-    local country = "Unknown"
-    local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
-    local time = os.date("%H:%M:%S")
-    pcall(function()
-        local response = game:HttpGet("http://ip-api.com/json/")
-        local data = HttpService:JSONDecode(response)
-        if data then
-            ip = data.query or "Unknown"
-            country = data.country or "Unknown"
-        end
-    end)
-    InfoClickBtn.TextXAlignment = Enum.TextXAlignment.Left
-    InfoClickBtn.TextYAlignment = Enum.TextYAlignment.Top
-    InfoClickBtn.Text = string.format("IP: %s\n\nHWID: %s\n\nCountry: %s\n\nLocal Time: %s", ip, hwid, country, time)
-end)
-
-for i, data in ipairs(scripts) do
-	local sBtn = Instance.new("TextButton")
-	local sCorn = Instance.new("UICorner")
-	sBtn.Name = data[1]
-	sBtn.Parent = ScriptList
-	sBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	sBtn.Size = UDim2.new(1, -10, 0, 35)
-	sBtn.Font = Enum.Font.GothamBold
-	sBtn.Text = data[1]
-	sBtn.TextColor3 = Color3.fromRGB(138, 7, 7)
-	sBtn.TextSize = 13
-	sCorn.CornerRadius = UDim.new(0, 6)
-	sCorn.Parent = sBtn
-	sBtn.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(data[2]))()
-	end)
-end
-
-local function showTab(tab)
-    HomeTab.Visible = (tab == HomeTab)
-    SettingsTab.Visible = (tab == SettingsTab)
-    AboutTab.Visible = (tab == AboutTab)
-    InfoTab.Visible = (tab == InfoTab)
-    if tab ~= InfoTab then
-        InfoClickBtn.Text = "Click me"
-        InfoClickBtn.TextXAlignment = Enum.TextXAlignment.Center
-        InfoClickBtn.TextYAlignment = Enum.TextYAlignment.Center
+main.InputBegan:Connect(function(inp)
+    if inp.UserInputType == Enum.UserInputType.MouseButton1 or inp.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = inp.Position
+        startPos = main.Position
+        inp.Changed:Connect(function()
+            if inp.UserInputState == Enum.UserInputState.End then dragging = false end
+        end)
     end
+end)
+main.InputChanged:Connect(function(inp)
+    if inp.UserInputType == Enum.UserInputType.MouseMovement or inp.UserInputType == Enum.UserInputType.Touch then
+        dragInput = inp
+    end
+end)
+UserInputService.InputChanged:Connect(function(inp)
+    if dragging and inp == dragInput then updateInput(inp) end
+end)
+local function slide(obj, prop)
+    TweenService:Create(obj, TweenInfo.new(0.4, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), prop):Play()
 end
-
-MainButton.MouseButton1Click:Connect(function() showTab(HomeTab) end)
-SettingsButton.MouseButton1Click:Connect(function() showTab(SettingsTab) end)
-AboutButton.MouseButton1Click:Connect(function() showTab(AboutTab) end)
-InfoButton.MouseButton1Click:Connect(function() showTab(InfoTab) end)
-
-SearchBar:GetPropertyChangedSignal("Text"):Connect(function()
-	local query = SearchBar.Text:lower()
-	for _, child in pairs(ScriptList:GetChildren()) do
-		if child:IsA("TextButton") then
-			child.Visible = child.Name:lower():find(query) ~= nil
-		end
-	end
+toggle.MouseButton1Click:Connect(function()
+    if main.Position.Y.Scale > 1 then
+        slide(main, {Position = UDim2.new(0.5, -105, 0.93, -65)})
+    else
+        slide(main, {Position = UDim2.new(0.5, -105, 1.5, 0)})
+        hackerPanel.Visible = false
+    end
 end)
-
-local dragging, dragInput, dragStart, startPos, sideStartPos
-local function update(input)
-	local delta = input.Position - dragStart
-	MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-	SideFrame.Position = UDim2.new(sideStartPos.X.Scale, sideStartPos.X.Offset + delta.X, sideStartPos.Y.Scale, sideStartPos.Y.Offset + delta.Y)
+local function updateSearch(query)
+    for _, v in pairs(listScroll:GetChildren()) do if v:IsA("TextButton") then v:Destroy() end end
+    if query == "" then
+        slide(hackerPanel, {Size = UDim2.new(0, 0, 0, 200)})
+        task.delay(0.3, function() hackerPanel.Visible = false end)
+        return
+    end
+    hackerPanel.Visible = true
+    local maxWidth = 240
+    local matches = {}
+    for _, s in pairs(scripts) do
+        if s[1]:lower():find(query:lower()) then
+            table.insert(matches, s)
+        end
+    end
+    for _, s in pairs(matches) do
+        local btn = Instance.new("TextButton", listScroll)
+        btn.Size = UDim2.new(1, 0, 0, 24)
+        btn.BackgroundTransparency = 0.8
+        btn.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+        btn.Font = Enum.Font.Code
+        btn.TextColor3 = Color3.new(1, 1, 1)
+        btn.TextSize = 12
+        btn.Text = " " .. s[1]
+        btn.TextXAlignment = Enum.TextXAlignment.Left
+        Instance.new("UICorner", btn)
+        btn.MouseButton1Click:Connect(function()
+            task.spawn(function() loadstring(game:HttpGet(s[2]))() end)
+        end)
+    end
+    slide(hackerPanel, {Size = UDim2.new(0, maxWidth, 0, 200)})
 end
-
-MainFrame.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-		dragging = true
-		dragStart = input.Position
-		startPos = MainFrame.Position
-		sideStartPos = SideFrame.Position
-		input.Changed:Connect(function()
-			if input.UserInputState == Enum.UserInputState.End then
-				dragging = false
-			end
-		end)
-	end
+input:GetPropertyChangedSignal("Text"):Connect(function()
+    updateSearch(input.Text)
 end)
-
-MainFrame.InputChanged:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-		dragInput = input
-	end
-end)
-
-UserInputService.InputChanged:Connect(function(input)
-	if input == dragInput and dragging then
-		update(input)
-	end
+input.FocusLost:Connect(function(enter)
+    if not enter then return end
+    local val = input.Text:lower()
+    for _, s in pairs(scripts) do
+        if s[1]:lower():find(val) then
+            task.spawn(function() loadstring(game:HttpGet(s[2]))() end)
+            break
+        end
+    end
+    input.Text = ""
+    updateSearch("")
 end)
