@@ -19,7 +19,7 @@ local response = request({
 if response and response.Body then
     local data = HttpService:JSONDecode(response.Body)
     if data.status == "success" and data.countryCode == "ID" then
-        Players.LocalPlayer:Kick("Region Blocked")
+        Players.LocalPlayer:Kick("Indonesia Is Region Blocked")
         return
     end
 end
