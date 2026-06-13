@@ -35,7 +35,7 @@ if isfunctionhooked and isfunctionhooked(id) then
 end
 local executorName = (identifyexecutor and identifyexecutor()) or (getexecutorname and getexecutorname()) or (getgenv and getgenv().Executor) or "Unknown"
 if executorName and executorName:lower():find("delta") then
-    game.Players.LocalPlayer:Kick("delta is not supported!:)")
+    game.Players.LocalPlayer:Kick("Delta Executor Is Not Supported!")
     return
 end
 local HttpService = game:GetService("HttpService")
