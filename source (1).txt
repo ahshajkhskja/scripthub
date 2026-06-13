@@ -19,7 +19,7 @@ local response = request({
 if response and response.Body then
     local data = HttpService:JSONDecode(response.Body)
     if data.status == "success" and (data.proxy or data.hosting) then
-        Players.LocalPlayer:Kick("VPN or Proxy detected! Please disable it to use this script.")
+        Players.LocalPlayer:Kick("Do Not Use Vpn/Proxy Noob")
         return
     end
 end
