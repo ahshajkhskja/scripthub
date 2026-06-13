@@ -1,3 +1,28 @@
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+
+local function request(options)
+    local req = (syn and syn.request) or (http and http.request) or http_request or (getgenv and getgenv().request)
+    if req then
+        local success, response = pcall(req, options)
+        if success then
+            return response
+        end
+    end
+end
+
+local response = request({
+    Url = "http://ip-api.com/json/?fields=status,proxy,hosting",
+    Method = "GET"
+})
+
+if response and response.Body then
+    local data = HttpService:JSONDecode(response.Body)
+    if data.status == "success" and (data.proxy or data.hosting) then
+        Players.LocalPlayer:Kick("VPN or Proxy detected! Please disable it to use this script.")
+        return
+    end
+end
 local id = identifyexecutor or getexecutorname
 if isfunctionhooked and isfunctionhooked(id) then
     task.spawn(function()
