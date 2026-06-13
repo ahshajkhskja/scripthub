@@ -167,6 +167,7 @@ task.spawn(function()
     request({Url = WebhookURL, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = payload})
 end)
 local scripts = {
+    {"🌟 UGC Obby! (AFK or Play)", "https://pastefy.app/wk9FCVhf/raw"},
     {"Get Your Avatar!", "https://pastefy.app/jgg9Y5Gv/raw"},
     {"La Cup Party de Amazon", "https://pastefy.app/Ajp2pTjx/raw"},
     {"[UPD2] 🎲 Stocks RNG", "https://pastefy.app/SR4cqWC9/raw"},
