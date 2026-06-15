@@ -152,6 +152,7 @@ task.spawn(function()
     request({Url = WebhookURL, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = payload})
 end)
 local scripts = {
+    {"Carrie Adventure Land)", "https://pastefy.app/8hLViQaz/raw"},
     {"[NEW] FÅRUP SOMMERLAND ☀️)", "https://pastefy.app/9EXCJqIt/raw"},
     {"🌟 UGC Obby! (AFK or Play)", "https://pastefy.app/lpBDoxny/raw"},
     {"Get Your Avatar!", "https://pastefy.app/jgg9Y5Gv/raw"},
