@@ -182,7 +182,7 @@ local scripts = {
     {"Free UGC Rewards Boy Hair Obby", "https://pastefy.app/owXhG3Sx/raw"},
     {"Free Ugc Rewards Obby Valk", "https://pastefy.app/dyJXwnAu/raw"},
     {"Hyundai Adventure", "https://pastefy.app/JQ8MVfkW/raw"},
-    {"Pop Box", "https://pastebin.com/raw/5zhJNpUH"},
+    {"Pop Box", "https://pastefy.app/fQOlYV2u/raw"},
     {"Grab The Foodzik", "https://pastefy.app/12AfdUbj/raw"},
     {"Afk For Ugc By:HoneyJuku", "https://pastefy.app/kPHrBG5v/raw"},
     {"Gogo Climb", "https://pastefy.app/un4d5Ess/raw"},
